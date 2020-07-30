@@ -188,7 +188,7 @@ public class TestStep {
     public void user_should_click_on_login_signup_button() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
     	FlipkartLoginPage F=new FlipkartLoginPage();
-    	F.clickLoginSign(driver);
+    	//F.clickLoginSign(driver);
     }
 
     @Given("^user should enter mobile number \"([^\"]*)\"$")

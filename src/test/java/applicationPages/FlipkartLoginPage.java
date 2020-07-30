@@ -41,11 +41,11 @@ public class FlipkartLoginPage extends LoginPage {
 				e.printStackTrace();
 			}
 }
-	 public void clickLoginSign (WebDriver driver) {
+	 public void clickLoginSign (WebDriver driver) throws NullPointerException {
 		 WebElement element = null;
 			try {
 				element = driver.findElement(objMap.getLocator("LoginSign"));
-				clickElement(driver, "LoginSign", element);
+				//clickElement(driver, "LoginSign", element);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

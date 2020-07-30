@@ -29,8 +29,8 @@ Feature: Amezon Feature
     Scenario: cheking functionality of flipkart website
     Given user should be able to open flipkart website "https://www.flipkart.com"
     And user should click on login & signup  button
-    And user should enter mobile number "9527117498"
-    And user should enter flipkart password "Xam@2015"
+    And user should enter mobile number "7276672603"
+    And user should enter flipkart password "Xam@2016"
     And user should click on login button
     And user should click on men tab
     And user should click on clothing tab
