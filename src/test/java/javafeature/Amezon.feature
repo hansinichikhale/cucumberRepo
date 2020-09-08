@@ -37,9 +37,9 @@ Feature: Amezon Feature
      @Amit
   Scenario: checking functionality of inbox tab
     Given user should able to open Gmailwebsite "https://www.gmail.com"
-    And user should enter email "pavan.chikhale16"
+    And user should enter email "pazdfd@gmail.com"
     And user clciks on next button 
-    And user should enter password "Xam@2016"
+    And user should enter password "Xm@20gg16"
     And user clciks on next button
     Then sucessfully loggned in Account
     
