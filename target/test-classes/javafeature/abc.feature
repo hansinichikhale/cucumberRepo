@@ -25,7 +25,7 @@ Feature: Amezon Feature
     And user should click on logout tab
     Then sucessfully user should be logout
     
-    @Flipkart
+    @Flipkart1
     Scenario: cheking functionality of flipkart website
     Given user should be able to open flipkart website "https://www.flipkart.com"
     And user should click on login & signup  button

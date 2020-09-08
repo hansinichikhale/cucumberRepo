@@ -44,6 +44,7 @@ public By getLocator(String strElement) throws Exception {
          
         // return a instance of the By class based on the type of the locator
         // this By can be used by the browser object in the actual test
+        
         if(locatorType.toLowerCase().equals("id"))
             return By.id(locatorValue);
         else if(locatorType.toLowerCase().equals("name"))
@@ -62,5 +63,7 @@ public By getLocator(String strElement) throws Exception {
             return By.xpath(locatorValue);
         else
             throw new Exception("Unknown locator type '" + locatorType + "'");
-    }
-}
+        }
+
+        }
+    

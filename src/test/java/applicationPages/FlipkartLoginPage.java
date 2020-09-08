@@ -14,7 +14,8 @@ public class FlipkartLoginPage extends LoginPage {
 	public void enterFlipkartId(WebDriver driver,String UserIdvlue) {
 		WebElement element = null;
 		try {
-			element = driver.findElement(objMap.getLocator("FlipkartUserid"));
+			element=driver.findElement(By.xpath("//a[contains(text(),'Login')]"));
+			//element = driver.findElement(objMap.getLocator("FlipkartUserid"));
 			EnterData(driver,element,"FlipkartUserID",UserIdvlue);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -44,7 +45,7 @@ public class FlipkartLoginPage extends LoginPage {
 	 public void clickLoginSign (WebDriver driver) throws NullPointerException {
 		 WebElement element = null;
 			try {
-				element = driver.findElement(objMap.getLocator("LoginSign"));
+				//element = driver.findElement(objMap.getLocator("LoginSign"));
 				//clickElement(driver, "LoginSign", element);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

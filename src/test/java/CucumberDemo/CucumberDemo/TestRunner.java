@@ -17,7 +17,7 @@ import cucumber.api.junit.Cucumber;
 		
         features ="src/test/java/javafeature/Abc.feature"
         ,glue= {"seleniumgluecode"},
-        tags= {"@Flipkart"},
+        tags= {"@Flipkart1"},
         plugin = { "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"}, 
         monochrome = true
                 )  //glue= {"seleniumgluecode"}  @LOGout,@Amit,@GmailLoginTestcase,@AmezonLogin src/test/java/javafeature/Amezon.feature ,src/test/java/javafeature/Amezon.feature

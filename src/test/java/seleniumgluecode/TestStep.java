@@ -187,8 +187,14 @@ public class TestStep {
     @Given("^user should click on login & signup  button$")
     public void user_should_click_on_login_signup_button() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-    	FlipkartLoginPage F=new FlipkartLoginPage();
-    	//F.clickLoginSign(driver);
+    	
+    	try {
+    		FlipkartLoginPage F=new FlipkartLoginPage();
+        	F.clickLoginSign(driver);	
+    	}
+    	catch(java.lang.NullPointerException e){
+    		
+    	}
     }
 
     @Given("^user should enter mobile number \"([^\"]*)\"$")
