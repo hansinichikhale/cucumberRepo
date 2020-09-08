@@ -10,9 +10,9 @@ Feature: Amezon Feature
   @Amit
   Scenario: checking functionality of inbox tab
     Given user should able to open Gmailwebsite "https://www.bigbasket.com/auth/login/"
-    And user should en1ter email "pavan.chikhale16@gmail.com"
+    And user should en1ter email ""
     And user clciks on next button 
-    And user should enter password "Xam@2016"
+    And user should enter password ""
     And user clciks on next button
     Then sucessfully loggned in Account
     
@@ -29,8 +29,8 @@ Feature: Amezon Feature
     Scenario: cheking functionality of flipkart website
     Given user should be able to open flipkart website "https://www.flipkart.com"
     And user should click on login & signup  button
-    And user should enter mobile number "7276672603"
-    And user should enter flipkart password "Xam@2016"
+    And user should enter mobile number "3"
+    And user should enter flipkart password "X"
     And user should click on login button
     And user should click on men tab
     And user should click on clothing tab
