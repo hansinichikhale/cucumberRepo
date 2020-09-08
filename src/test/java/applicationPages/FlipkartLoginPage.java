@@ -5,17 +5,25 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 import com.frmwrk.util.ObjectMap;
 
 public class FlipkartLoginPage extends LoginPage {
 	ObjectMap objMap = new ObjectMap("ObjectRepository.properties");
+	public WebDriver driver;
 	
-	public void enterFlipkartId(WebDriver driver,String UserIdvlue) {
+	public FlipkartLoginPage(RemoteWebDriver driver1) {
+
+this.driver = driver1;
+		
+	}
+	public void enterFlipkartId(String UserIdvlue) {
 		WebElement element = null;
 		try {
-			element=driver.findElement(By.xpath("//a[contains(text(),'Login')]"));
-			//element = driver.findElement(objMap.getLocator("FlipkartUserid"));
+			//element=driver.findElement(By.xpath("//a[contains(text(),'Login')]"));
+			element = driver.findElement(objMap.getLocator("FlipkartUserid"));
 			EnterData(driver,element,"FlipkartUserID",UserIdvlue);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -23,7 +31,7 @@ public class FlipkartLoginPage extends LoginPage {
 		}
 	     
 	}
-	public void navigateToFlipkart(WebDriver driver, String ApplicationValue) throws InterruptedException {
+	public void navigateToFlipkart(String ApplicationValue) throws InterruptedException {
 		 System.setProperty("webdriver.chrome.driver","G:/chromedriver.exe");
 	        driver = new ChromeDriver();
 	        Thread.sleep(4000);
@@ -32,7 +40,7 @@ public class FlipkartLoginPage extends LoginPage {
 	        driver.get(ApplicationValue);
 	    	System.out.println("Flipkart is opened");
 	}
-	public void enterPassword(WebDriver driver, String Password) {
+	public void enterPassword(String Password) {
 		 WebElement element = null;
 			try {
 				element = driver.findElement(objMap.getLocator("FlipkartPassword"));
@@ -42,17 +50,18 @@ public class FlipkartLoginPage extends LoginPage {
 				e.printStackTrace();
 			}
 }
-	 public void clickLoginSign (WebDriver driver) throws NullPointerException {
+	 public void clickLoginSign () throws NullPointerException {
 		 WebElement element = null;
 			try {
+				element = driver.findElement(By.xpath("//a[contains(text(),'Login')]"));
 				//element = driver.findElement(objMap.getLocator("LoginSign"));
-				//clickElement(driver, "LoginSign", element);
+				clickElement(driver, "LoginSign", element);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	 }
-	 public void clickLogin (WebDriver driver) {
+	 public void clickLogin () {
 		 WebElement element = null;
 			try {
 				element = driver.findElement(objMap.getLocator("BtnLogin"));
@@ -62,7 +71,7 @@ public class FlipkartLoginPage extends LoginPage {
 				e.printStackTrace();
 			}
 	 }
-	 public void enterProductName(WebDriver driver, String Product) {
+	 public void enterProductName( String Product) {
 		 WebElement element = null;
 			try {
 				//element = driver.findElement(objMap.getLocator("EdtFilpkartPSerach"));
@@ -76,7 +85,7 @@ public class FlipkartLoginPage extends LoginPage {
 				e.printStackTrace();
 			}
 }
-	 public void clickProductSearch (WebDriver driver) {
+	 public void clickProductSearch () {
 		 WebElement element = null;
 			try {
 				element = driver.findElement(objMap.getLocator("btnFsearch"));

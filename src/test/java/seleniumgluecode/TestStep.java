@@ -11,6 +11,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import applicationPages.AmezonLoginPage;
 import applicationPages.FlipkartLoginPage;
@@ -25,7 +26,7 @@ import cucumber.api.java.en.When;
 import org.junit.Assert;
 
 public class TestStep {
-    public static WebDriver driver;
+    public static RemoteWebDriver driver;
     
     @Before
     public void before(Scenario scenario) {
@@ -180,8 +181,8 @@ public class TestStep {
     @Given("^user should be able to open flipkart website \"([^\"]*)\"$")
     public void user_should_be_able_to_open_flipkart_website(String arg1) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        FlipkartLoginPage F=new FlipkartLoginPage();
-        F.navigateToFlipkart(driver, arg1);
+        FlipkartLoginPage F=new FlipkartLoginPage(driver);
+        F.navigateToFlipkart(arg1);
     }
 
     @Given("^user should click on login & signup  button$")
@@ -189,8 +190,8 @@ public class TestStep {
         // Write code here that turns the phrase above into concrete actions
     	
     	try {
-    		FlipkartLoginPage F=new FlipkartLoginPage();
-        	F.clickLoginSign(driver);	
+    		FlipkartLoginPage F1=new FlipkartLoginPage(driver);
+        	F1.clickLoginSign();	
     	}
     	catch(java.lang.NullPointerException e){
     		
@@ -200,15 +201,15 @@ public class TestStep {
     @Given("^user should enter mobile number \"([^\"]*)\"$")
     public void user_should_enter_mobile_number(String arg1) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-    	FlipkartLoginPage F=new FlipkartLoginPage();
-    	F.enterFlipkartId(driver, arg1);
+    	FlipkartLoginPage F=new FlipkartLoginPage(driver);
+    	F.enterFlipkartId(arg1);
     }
 
     @Given("^user should click on login button$")
     public void user_should_click_on_login_button() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-    	FlipkartLoginPage F=new FlipkartLoginPage();
-    	F.clickLogin(driver);
+    	FlipkartLoginPage F=new FlipkartLoginPage(driver);
+    	F.clickLogin();
     }
 
     @Given("^user should click on men tab$")
@@ -237,20 +238,20 @@ public class TestStep {
     @Given("^user should enter flipkart password \"([^\"]*)\"$")
     public void user_should_enter_flipkart_password(String arg1) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-    	FlipkartLoginPage F=new FlipkartLoginPage();
-    	F.enterPassword(driver, arg1);
+    	FlipkartLoginPage F=new FlipkartLoginPage(driver);
+    	F.enterPassword(arg1);
     }
     @Given("^user should enter \"([^\"]*)\" in searchbox\\.$")
     public void user_should_enter_in_searchbox(String arg1) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-    	FlipkartLoginPage F=new FlipkartLoginPage();
-    	F.enterProductName(driver, arg1);
+    	FlipkartLoginPage F=new FlipkartLoginPage(driver);
+    	F.enterProductName( arg1);
     }
     @Given("^user should click on search button\\.$")
     public void user_should_click_on_search_button() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-    	FlipkartLoginPage F=new FlipkartLoginPage();
-    	F.clickProductSearch(driver);
+    	FlipkartLoginPage F=new FlipkartLoginPage(driver);
+    	F.clickProductSearch();
     }
 
     @Then("^user should able to view products\\.$")

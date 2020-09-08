@@ -86,8 +86,9 @@ public void SelectData(WebElement e) {
 
 public void waitElement(WebDriver d,WebElement e) {
 	
-	WebDriverWait wait1 = new WebDriverWait(d,8000);
+	
 	try {
+		WebDriverWait wait1 = new WebDriverWait(d,8000);
 		wait1.wait(1000);
 	} catch (InterruptedException e1) {
 		// TODO Auto-generated catch block

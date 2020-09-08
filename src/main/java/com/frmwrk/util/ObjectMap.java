@@ -61,6 +61,7 @@ public By getLocator(String strElement) throws Exception {
             return By.cssSelector(locatorValue);
         else if(locatorType.toLowerCase().equals("xpath"))
             return By.xpath(locatorValue);
+        //return locatorValue;
         else
             throw new Exception("Unknown locator type '" + locatorType + "'");
         }
